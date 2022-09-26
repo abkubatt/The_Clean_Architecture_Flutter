@@ -39,6 +39,7 @@ dependencies:
   equatable: ^2.0.5
   dartz: ^0.10.1
   http: ^0.13.5
+  flutter_bloc: ^8.1.1
 
 
 dev_dependencies:
