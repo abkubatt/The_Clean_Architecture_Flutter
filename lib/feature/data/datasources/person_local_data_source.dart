@@ -23,7 +23,7 @@ class PersonLocalDataSourceImpl implements PersonLocalDataSource {
 
   @override
   Future<List<PersonModel>> getLastPersonsFromCache() {
-    final jsonPersonsList =
+    late final jsonPersonsList =
         sharedPreferences.getStringList(CACHED_PERSONS_LIST);
     if (jsonPersonsList!.isNotEmpty) {
       print('Get Persons from Cache: ${jsonPersonsList.length}');

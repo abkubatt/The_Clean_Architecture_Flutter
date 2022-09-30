@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rick_and_morty/feature/presentation/widgets/persons_list_widget.dart';
 
 
 class HomePage extends StatelessWidget {
@@ -18,6 +19,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
+      body: PersonsList(),
     );
   }
 }
