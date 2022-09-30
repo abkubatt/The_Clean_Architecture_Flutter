@@ -31,7 +31,7 @@ class PersonRemoteDataSourceImpl implements PersonRemoteDataSource {
         .get(Uri.parse(url), headers: {'Context-Type': 'application/json'});
     if (response.statusCode == 200) {
       final persons = json.decode(response.body);
-      return (persons['result'] as List)
+      return (persons['results'] as List)
           .map((person) => PersonModel.fromJson(person))
           .toList();
     } else {
