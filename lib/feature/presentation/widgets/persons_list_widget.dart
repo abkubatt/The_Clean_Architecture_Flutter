@@ -8,8 +8,11 @@ import 'package:rick_and_morty/feature/presentation/bloc/person_list_cubit/perso
 import 'package:rick_and_morty/feature/presentation/bloc/person_list_cubit/person_list_state.dart';
 import 'package:rick_and_morty/feature/presentation/widgets/person_card_widget.dart';
 
+const SERVER_FAILURE_MESSAGE = 'Server Failure';
+const CACHED_FAILURE_MESSAGE = 'Cache Failure';
+
 class PersonsList extends StatelessWidget {
-  const PersonsList({super.key});
+  PersonsList({super.key});
 
   final scrollController = ScrollController();
 
@@ -17,7 +20,7 @@ class PersonsList extends StatelessWidget {
     scrollController.addListener(() {
       if (scrollController.position.atEdge) {
         if (scrollController.position.pixels != 0) {
-          //BlocProvider.of<PersonListCubit>(context).loadPerson();
+          // BlocProvider.of<PersonListCubit>(context).loadPerson();
           context.read<PersonListCubit>().loadPerson();
         }
       }

@@ -17,7 +17,7 @@ final sl = GetIt.instance;
 Future<void> init() async {
   //BLoC / Cubit
   sl.registerFactory(
-    () => PersonListCubit(getAllPersons: sl()),
+    () => PersonListCubit(getAllPersons: sl<GetAllPersons>()),
   );
 
   sl.registerFactory(
@@ -40,7 +40,7 @@ Future<void> init() async {
 
   sl.registerLazySingleton<PersonRemoteDataSource>(
     () => PersonRemoteDataSourceImpl(
-      client: http.Client(),
+      client: sl(),
     ),
   );
 
